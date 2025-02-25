@@ -6,7 +6,6 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightNeoForgeClientEvents;
 import com.lance5057.extradelight.data.advancement.EDAdvancementGenerator;
 
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 
@@ -39,6 +38,10 @@ public class EDItemGenerator {
 	public EDItemGenerator advancementDessert() {
 		EDAdvancementGenerator.DESSERTS.put(item.getRegisteredName(), item);
 		return this;
+	}
+
+	public Drink drink() {
+		return new Drink(item);
 	}
 
 	public EDItemGenerator advancementDrink() {
@@ -84,4 +87,18 @@ public class EDItemGenerator {
 	public DeferredItem<Item> finish() {
 		return item;
 	}
+
+	public class Drink {
+		public DeferredItem<Item> item;
+		public int thirst;
+		public int hydration;
+		public int poison;
+
+		public Drink(DeferredItem<Item> item2) {
+			this.item = item2;
+		}
+		
+		
+	}
+
 }
