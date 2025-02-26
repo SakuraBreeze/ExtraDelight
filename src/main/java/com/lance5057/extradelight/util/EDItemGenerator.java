@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -10,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 public class EDItemGenerator {
+	public static List<Drink> drinks = new ArrayList<Drink>();
 	DeferredItem<Item> item;
 
 	private EDItemGenerator(DeferredItem<Item> item) {
@@ -41,12 +44,8 @@ public class EDItemGenerator {
 	}
 
 	public Drink drink() {
-		return new Drink(item);
-	}
-
-	public EDItemGenerator advancementDrink() {
 		EDAdvancementGenerator.DRINKS.put(item.getRegisteredName(), item);
-		return this;
+		return new Drink(item);
 	}
 
 	public EDItemGenerator advancementCandy() {
@@ -93,12 +92,36 @@ public class EDItemGenerator {
 		public int thirst;
 		public int hydration;
 		public int poison;
+		public boolean isHot;
 
 		public Drink(DeferredItem<Item> item2) {
 			this.item = item2;
 		}
-		
-		
+
+		public Drink setThirst(int t) {
+			thirst = t;
+			return this;
+		}
+
+		public Drink setHydration(int h) {
+			hydration = h;
+			return this;
+		}
+
+		public Drink setPoison(int p) {
+			poison = p;
+			return this;
+		}
+
+		public Drink isHot(boolean hot) {
+			isHot = hot;
+			return this;
+		}
+
+		public DeferredItem<Item> finish() {
+			EDItemGenerator.drinks.add(this);
+			return item;
+		}
 	}
 
 }

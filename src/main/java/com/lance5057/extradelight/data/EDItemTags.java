@@ -526,6 +526,10 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ItemTags.SHEEP_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
 
 		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
+
+		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
+			parseTaNTag(d);
+		}
 	}
 
 	// Tough as Nails

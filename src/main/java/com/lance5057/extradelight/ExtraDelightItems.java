@@ -298,13 +298,17 @@ public class ExtraDelightItems {
 
 	// Juice
 	public static final DeferredItem<Item> GLOW_BERRY_JUICE = EDItemGenerator
-			.register("glow_berry_juice", () -> new GlowberryJuiceItem(drinkItem())).advancementDrink().finish();
+			.register("glow_berry_juice", () -> new GlowberryJuiceItem(drinkItem())).drink().setHydration(20)
+			.setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> SWEET_BERRY_JUICE = EDItemGenerator
-			.register("sweet_berry_juice", () -> new MelonJuiceItem(drinkItem())).advancementDrink().finish();
+			.register("sweet_berry_juice", () -> new MelonJuiceItem(drinkItem())).drink().setHydration(20).setThirst(6)
+			.setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> TOMATO_JUICE = EDItemGenerator
-			.register("tomato_juice", () -> new MelonJuiceItem(drinkItem())).advancementDrink().finish();
+			.register("tomato_juice", () -> new MelonJuiceItem(drinkItem())).drink().setHydration(30).setThirst(6)
+			.setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> CACTUS_JUICE = EDItemGenerator
-			.register("cactus_juice", () -> new CactusJuiceItem(drinkItem())).advancementDrink().finish();
+			.register("cactus_juice", () -> new CactusJuiceItem(drinkItem())).drink().setHydration(60).setThirst(6)
+			.setPoison(0).isHot(false).finish();
 
 	// Custard
 	public static final DeferredItem<Item> SWEET_BERRY_CUSTARD = EDItemGenerator
@@ -1098,7 +1102,7 @@ public class ExtraDelightItems {
 			.finish();
 	public static final DeferredItem<Item> TEA = EDItemGenerator
 			.register("tea", () -> new CornSilkTeaItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
-			.advancementDrink().finish();
+			.drink().setHydration(20).setThirst(4).setPoison(0).isHot(true).finish();
 	public static final DeferredItem<Item> STEWED_APPLES = EDItemGenerator
 			.register("stewed_apples",
 					() -> new ToolTipConsumableItem(foodItem(EDFoods.STEWED_APPLES).craftRemainder(Items.BOWL), true))
@@ -1392,41 +1396,45 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> MILKSHAKE = EDItemGenerator
 			.register("milkshake",
 					() -> new MilkshakeDrinkItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 2f))
-			.advancementDrink().finish();
+			.drink().setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> CHOCOLATE_MILKSHAKE = EDItemGenerator
-			.register("chocolate_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).advancementDrink()
-			.finish();
+			.register("chocolate_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> GLOW_BERRY_MILKSHAKE = EDItemGenerator
-			.register("glow_berry_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f))
-			.advancementDrink().finish();
+			.register("glow_berry_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> SWEET_BERRY_MILKSHAKE = EDItemGenerator
-			.register("sweet_berry_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f))
-			.advancementDrink().finish();
+			.register("sweet_berry_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> PUMPKIN_MILKSHAKE = EDItemGenerator
-			.register("pumpkin_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).advancementDrink()
-			.finish();
+			.register("pumpkin_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> HONEY_MILKSHAKE = EDItemGenerator
-			.register("honey_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).advancementDrink()
-			.finish();
+			.register("honey_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> APPLE_MILKSHAKE = EDItemGenerator
-			.register("apple_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).advancementDrink()
-			.finish();
+			.register("apple_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> COOKIE_DOUGH_MILKSHAKE = EDItemGenerator
-			.register("cookie_dough_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f))
-			.advancementDrink().finish();
+			.register("cookie_dough_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> MINT_CHIP_MILKSHAKE = EDItemGenerator
-			.register("mint_chip_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).advancementDrink()
-			.finish();
+			.register("mint_chip_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties(), 4f)).drink()
+			.setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 
 	public static final DeferredItem<Item> CHOCOLATE_MILK = EDItemGenerator
-			.register("chocolate_milk", () -> new HotCocoaItem(new Item.Properties())).advancementDrink().finish();
+			.register("chocolate_milk", () -> new HotCocoaItem(new Item.Properties())).drink().setHydration(30)
+			.setThirst(2).setPoison(0).isHot(false).finish();
 
 	public static final DeferredItem<Item> EGGNOG = EDItemGenerator
-			.register("eggnog", () -> new HotCocoaItem(new Item.Properties())).advancementDrink().finish();
+			.register("eggnog", () -> new HotCocoaItem(new Item.Properties())).drink().setHydration(20).setThirst(2)
+			.setPoison(0).isHot(true).finish();
 	public static final DeferredItem<Item> GINGER_BEER = EDItemGenerator
-			.register("ginger_beer", () -> new MelonJuiceItem(new Item.Properties())).advancementDrink().finish();
+			.register("ginger_beer", () -> new MelonJuiceItem(new Item.Properties())).drink().setHydration(30)
+			.setThirst(4).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> HORCHATA = EDItemGenerator
-			.register("horchata", () -> new HotCocoaItem(new Item.Properties())).advancementDrink().finish();
+			.register("horchata", () -> new HotCocoaItem(new Item.Properties())).drink().setHydration(40).setThirst(4)
+			.setPoison(0).isHot(false).finish();
 
 	public static final DeferredItem<Item> GINGERBREAD_COOKIE_DOUGH = EDItemGenerator
 			.register("gingerbread_cookie_dough", () -> new Item(foodItem(EDFoods.COOKIE_DOUGH)))
@@ -1820,8 +1828,8 @@ public class ExtraDelightItems {
 			.advancementFeast().finish();
 
 	public static final DeferredItem<Item> PUNCH = EDItemGenerator
-			.register("punch", () -> new MelonJuiceItem(new Item.Properties())).advancementDrink().servingToolTip()
-			.finish();
+			.register("punch", () -> new MelonJuiceItem(new Item.Properties())).servingToolTip().drink()
+			.setHydration(60).setThirst(6).isHot(false).setPoison(0).finish();
 	public static final DeferredItem<Item> PUNCH_FEAST = EDItemGenerator
 			.register("punch_feast", () -> new BlockItem(ExtraDelightBlocks.PUNCH.get(), new Item.Properties()))
 			.advancementFeast().finish();
@@ -2143,11 +2151,11 @@ public class ExtraDelightItems {
 			.register("mallow_cup", () -> new Item(foodItem(EDFoods.CHOCOLATE_TRUFFLE))).advancementCandy().finish();
 	public static final DeferredItem<Item> XOCOLATL = EDItemGenerator
 			.register("xocolati", () -> new XocolatlItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
-			.advancementDrink().finish();
+			.drink().setHydration(40).setThirst(5).isHot(true).setPoison(0).finish();
 	public static final DeferredItem<Item> GOURMET_HOT_CHOCOLATE = EDItemGenerator
 			.register("gourmet_hot_chocolate",
 					() -> new GourmetHotCocoa(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
-			.advancementDrink().finish();
+			.drink().setHydration(40).setThirst(4).isHot(true).setPoison(0).finish();
 	public static final DeferredItem<Item> LAVA_CAKE = EDItemGenerator
 			.register("lava_cake", () -> new Item(foodItem(FoodValues.CAKE_SLICE))).advancementDessert().finish();
 	public static final DeferredItem<Item> COFFEE_JELLY = EDItemGenerator
@@ -2193,8 +2201,8 @@ public class ExtraDelightItems {
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(),
 					new Item.Properties().food(EDFoods.COFFEE_BEANS)));
 	public static final DeferredItem<Item> COFFEE = EDItemGenerator
-			.register("coffee", () -> new CoffeeItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
-			.advancementDrink().finish();
+			.register("coffee", () -> new CoffeeItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))).drink()
+			.setHydration(20).setThirst(2).isHot(true).setPoison(0).finish();
 
 	public static final DeferredItem<Item> BROWNIES_BLOCK = EDItemGenerator
 			.register("brownies_block", () -> new BlockItem(ExtraDelightBlocks.BROWNIES.get(), new Item.Properties()))
@@ -2725,7 +2733,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> NUT_BUTTER_MILKSHAKE = EDItemGenerator
 			.register("nut_butter_milkshake",
 					() -> new MilkshakeDrinkItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 4f))
-			.advancementDrink().finish();
+			.drink().setHydration(20).setThirst(2).setPoison(0).isHot(false).finish();
 	public static final DeferredItem<Item> NUT_BUTTER_CUSTARD = EDItemGenerator
 			.register("nut_butter_custard", () -> new Item(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert()
 			.finish();
