@@ -13,6 +13,9 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 public class EDItemGenerator {
 	public static List<Drink> drinks = new ArrayList<Drink>();
+
+	public static List<DeferredItem<Item>> hotFood = new ArrayList<DeferredItem<Item>>();
+	public static List<DeferredItem<Item>> coldFood = new ArrayList<DeferredItem<Item>>();
 	DeferredItem<Item> item;
 
 	private EDItemGenerator(DeferredItem<Item> item) {
@@ -41,11 +44,6 @@ public class EDItemGenerator {
 	public EDItemGenerator advancementDessert() {
 		EDAdvancementGenerator.DESSERTS.put(item.getRegisteredName(), item);
 		return this;
-	}
-
-	public Drink drink() {
-		EDAdvancementGenerator.DRINKS.put(item.getRegisteredName(), item);
-		return new Drink(item);
 	}
 
 	public EDItemGenerator advancementCandy() {
@@ -83,8 +81,23 @@ public class EDItemGenerator {
 		return this;
 	}
 
+	public EDItemGenerator isHotFood() {
+		EDItemGenerator.hotFood.add(item);
+		return this;
+	}
+
+	public EDItemGenerator isColdFood() {
+		EDItemGenerator.coldFood.add(item);
+		return this;
+	}
+
 	public DeferredItem<Item> finish() {
 		return item;
+	}
+
+	public Drink drink() {
+		EDAdvancementGenerator.DRINKS.put(item.getRegisteredName(), item);
+		return new Drink(item);
 	}
 
 	public class Drink {

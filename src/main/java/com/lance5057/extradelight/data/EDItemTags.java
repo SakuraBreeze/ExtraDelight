@@ -15,10 +15,12 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -529,6 +531,14 @@ public class EDItemTags extends ItemTagsProvider {
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
+		}
+
+		for (DeferredItem<Item> i : EDItemGenerator.hotFood) {
+			tag(ExtraDelightTags.HEATING_CONSUMED_ITEMS).add(i.get());
+		}
+
+		for (DeferredItem<Item> i : EDItemGenerator.coldFood) {
+			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(i.get());
 		}
 	}
 
